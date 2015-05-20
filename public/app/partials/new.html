@@ -1,0 +1,44 @@
+<div ng-controller="NewMessageCtrl">
+    <form novalidate class="form-horizontal" name="messageForm">
+        <h1 class="page-header">New Message</h1>
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="currencyFrom">Currency From</label>
+                <div class="controls">
+					<select id="currencyFrom" ng-model="message.currencyFrom" required="">
+						<option ng-repeat="item in currency" value="{{item}}">{{item}}</option>
+					</select>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="currencyTo">Currency To</label>
+                <div class="controls">
+					<select id="currencyTo" ng-model="message.currencyTo" required="">
+						<option ng-repeat="item in currency" value="{{item}}">{{item}}</option>
+					</select>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="amountSell">Amount Sell</label>
+                <div class="controls">
+                    <input id="amountSell" type="text" class="input-block-level" 
+                           ng-model="message.amountSell" required=""></input>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="amountBuy">Amount Buy</label>
+                <div class="controls">
+                    <input id="amountBuy" type="text" class="input-block-level" 
+                           ng-model="message.amountBuy" required=""></input>
+                </div>
+            </div>
+            
+        </fieldset>
+        <div class="form-actions">			
+            <button type="submit" class="btn btn-primary" ng-click="saveMessage()" ng-disabled="messageForm.$invalid">Add Message</button>
+        </div>
+    </form>
+</div>
